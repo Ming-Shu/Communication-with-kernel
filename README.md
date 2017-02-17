@@ -17,9 +17,9 @@ It provides a full-duplex communication link between the two by way of standard 
                          _____________________________________________________
                         | socket(AF_NETLINK,SOCK_DGRAM,NETLINK_KOBJECT_UEVENT)|
                         |_____________________________________________________|
-        Userspace                                 |    
+        User space                                 |    
         ------------------------------------------|----------------------------------------
-        Kernelspace                               |    
+        Kernel space                               |    
                         __________________________|___________________________
                        |                   netlink_create()                   |
                        |______________________________________________________|
