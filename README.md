@@ -35,10 +35,10 @@ It provides a full-duplex communication link between the two by way of standard 
 Netlink socketes can be created in kernel or in userspace;
 
 userspace netlink socket:
-   sockets is created by the socket(),it is headled by the netlink_create().
+                                                                                                                                         sockets is created by the socket(),it is headled by the netlink_create().
                           
 kernel netlink socket:   
-   sockets is created by the netlink_kernel_create(),it is headled by the __netlink_kernel_create(),and it sets the NETLINK_KERNEL_SOCKET flag.
+                      sockets is created by the netlink_kernel_create(),it is headled by the __netlink_kernel_create(),and it sets the NETLINK_KERNEL_SOCKET flag.
                          
                          
 Reference:
