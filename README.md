@@ -28,3 +28,7 @@ It provides a full-duplex communication link between the two by way of standard 
                        |                   __netlink_create()                 |<------|  __netlink_kernel_create()  |
                        |______________________________________________________|       |_____________________________|
                                                                                       nlk->flags|=NETLINK_KERNEL_SOCKET  
+
+Reference:
+          http://www.linuxjournal.com/article/7356?page=0,0
+            
