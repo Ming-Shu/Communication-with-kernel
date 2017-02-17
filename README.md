@@ -14,12 +14,12 @@ About Netlink Socket:
 
 It provides a full-duplex communication link between the two by way of standard socket APIs for user-space processes and a special kernel API for kernel modules. 
 
-                      _____________________________________________________
-                     | socket(AF_NETLINK,SOCK_DGRAM,NETLINK_KOBJECT_UEVENT)|
-                     |_____________________________________________________|
-Userspace                                     |
-----------------------------------------------|------------------------------------
-Kernelspace                                   |
-                     _________________________|______________________________
-                    |                   netlink_create()                     |
-                    |________________________________________________________|
+                         _____________________________________________________
+                        | socket(AF_NETLINK,SOCK_DGRAM,NETLINK_KOBJECT_UEVENT)|
+                        |_____________________________________________________|
+        Userspace                                 |    
+        ------------------------------------------|----------------------------------------
+        Kernelspace                               |    
+                        __________________________|___________________________
+                       |                   netlink_create()                   |
+                       |______________________________________________________|
