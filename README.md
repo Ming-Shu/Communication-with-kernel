@@ -41,7 +41,8 @@ userspace netlink socket:
 kernel netlink socket:   
                       sockets is created by the netlink_kernel_create(),it is headled by the __netlink_kernel_create(),and it sets the NETLINK_KERNEL_SOCKET flag.
                          
-                         
+Eventually both methods call __netlink_create() to allocate a socket in common way it.
+
 Reference:
           http://www.linuxjournal.com/article/7356?page=0,0
             
