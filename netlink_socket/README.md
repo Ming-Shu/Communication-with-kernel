@@ -15,7 +15,7 @@ How can kernel code and user-space code  with each other?
                        |______________________________________________________|
                                                   |
                         __________________________|___________________________         _____________________________
-                       |                   __netlink_create()                 |<------|  __netlink_kernel_create()  |
+                       |                   __netlink_create()                 |<------|    netlink_kernel_create()  |
                        |______________________________________________________|       |_____________________________|
                                                                                       nlk->flags|=NETLINK_KERNEL_SOCKET  
 
