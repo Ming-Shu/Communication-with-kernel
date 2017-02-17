@@ -14,20 +14,24 @@ About Netlink Socket:
 
 It provides a full-duplex communication link between the two by way of standard socket APIs for user-space processes and a special kernel API for kernel modules. 
 
-                         _____________________________________________________
-                        | socket(AF_NETLINK,SOCK_DGRAM,NETLINK_KOBJECT_UEVENT)|
-                        |_____________________________________________________|
-        User space                                |    
-        ------------------------------------------|-----------------------------------------------------------------------------
-        Kernel                                    |    
-                        __________________________|___________________________
-                       |                   netlink_create()                   |
-                       |______________________________________________________|
-                                                  |
-                        __________________________|___________________________         _____________________________
-                       |                   __netlink_create()                 |<------|  __netlink_kernel_create()  |
-                       |______________________________________________________|       |_____________________________|
-                                                                                      nlk->flags|=NETLINK_KERNEL_SOCKET  
+                                         _______________________________________________________
+                                        | socket(AF_NETLINK,SOCK_RAM|SOCK_CLOEXEC,NETLINK_ROUTE)|
+                                        |              Userspace Netlink socket                 |
+                                        |_______________________________________________________|
+                            User space                                              |    
+                           ---------------------------------------------------------|-----------------------------
+                            Kernel                                                  |    
+                                                                      ______________|__________
+                                                                     |  netlink_create()       |                
+                                                                     |_________________________|
+                                                                                    |
+                               ___________________________            ______________|__________
+                              |  netlink_kernel_create()  |          | __netlink_create()      |
+                              |  Kernel Netlink socket    |--------->| sk_alloc()              |
+                              |___________________________|          | sock_init_data(sock,sk) |
+                                                                     |        .....            |
+                                                                     | ________________________|
+                                                                                      
 
 Reference:
           http://www.linuxjournal.com/article/7356?page=0,0
