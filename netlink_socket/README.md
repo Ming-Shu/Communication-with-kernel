@@ -30,7 +30,8 @@ Step:
 
 
 e.g.
-    hotplug_detect.c
+
+    hotplug_detect.c (To detect a USB device has been inserted or removed)
         
    When a USB drive is plugged in and kernel has detected,then hotplug mechanism through sysfs via the
    "uevent" files. Every time a device is added or removed, the kernel sends a uevent to notify udev of the change.
